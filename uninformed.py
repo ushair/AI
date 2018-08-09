@@ -1,9 +1,10 @@
 graph = {'A': ['B', 'C', 'D'],
          'B': ['A', 'E', 'F'],
-         'C': ['A'],
+         'C': ['A', 'G'],
          'D': ['A'],
          'E': ['B'],
-         'F': ['B']
+         'F': ['B'],
+         'G': ['C']
          }
 
 
@@ -13,22 +14,20 @@ def bfs(graph, start, goal):
 
     levels = {}
     levels[start] = 0
-
     visited = [start]
     while queue:
         node = queue.pop(0)
         explored.append(node)
         neighbours = graph[node]
-
+        if node is goal:
+            print("Goal Found :- " + node)
+            break
         for neighbour in neighbours:
             if neighbour not in visited:
                 queue.append(neighbour)
                 visited.append(neighbour)
 
                 levels[neighbour] = levels[node]+1
-                if neighbour is goal:
-                    print("Goal Found :- "+neighbour)
-                    break
 
     print("LEVELS:- ")
     print(levels)
