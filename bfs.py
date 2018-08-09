@@ -1,7 +1,7 @@
 import collections
 print("Breadth First Search :- ")
 graph = {'A': ['B', 'C', 'D'],
-         'B': ['A', 'F', 'E'],
+         'B': ['A', 'E', 'F'],
          'C': ['A'],
          'D': ['A'],
          'E': ['B'],
@@ -10,7 +10,7 @@ graph = {'A': ['B', 'C', 'D'],
 
 
 # visits all the nodes of a graph (connected component) using BFS
-def bfs(graph, start):
+def bfs(graph, start, key):
     # keep track of all visited nodes
     explored = []
     # keep track of nodes to be checked
@@ -34,9 +34,9 @@ def bfs(graph, start):
                 visited.append(neighbour)
 
                 levels[neighbour] = levels[node]+1
-                print(neighbour, ">>", levels[neighbour])
-                if neighbour is 'F':
-                    print("goal found "+neighbour)
+                # print(neighbour, ">>", levels[neighbour])
+                if neighbour is key:
+                    print("Goal Found "+neighbour)
                     break
 
     print(levels)
@@ -44,4 +44,4 @@ def bfs(graph, start):
     return explored
 
 
-ans = bfs(graph, 'A')
+ans = bfs(graph, 'A', 'E')
