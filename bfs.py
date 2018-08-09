@@ -9,7 +9,7 @@ graph = {'A': ['B', 'C', 'D'],
 
 
 # visits all the nodes of a graph (connected component) using BFS
-def bfs(graph, start, key):
+def bfs(graph, start, goal):
     # keep track of all visited nodes
     explored = []
     # keep track of nodes to be checked
@@ -33,7 +33,7 @@ def bfs(graph, start, key):
                 visited.append(neighbour)
 
                 levels[neighbour] = levels[node]+1
-                if neighbour is key:
+                if neighbour is goal:
                     print("Goal Found "+neighbour)
                     break
 
