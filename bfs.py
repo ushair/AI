@@ -1,4 +1,3 @@
-import collections
 print("Breadth First Search :- ")
 graph = {'A': ['B', 'C', 'D'],
          'B': ['A', 'E', 'F'],
@@ -34,7 +33,6 @@ def bfs(graph, start, key):
                 visited.append(neighbour)
 
                 levels[neighbour] = levels[node]+1
-                # print(neighbour, ">>", levels[neighbour])
                 if neighbour is key:
                     print("Goal Found "+neighbour)
                     break
@@ -45,3 +43,4 @@ def bfs(graph, start, key):
 
 
 ans = bfs(graph, 'A', 'E')
+print(ans)
