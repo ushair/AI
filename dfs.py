@@ -1,2 +1,1 @@
-print("ass")
-print(1)
+print("DEPTH FIRST SEARCH")
