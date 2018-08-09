@@ -42,5 +42,5 @@ def bfs(graph, start, key):
     return explored
 
 
-ans = bfs(graph, 'A', 'E')
+ans = bfs(graph, 'A', 'F')
 print(ans)
