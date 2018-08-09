@@ -10,7 +10,7 @@ graph = {'A': ['B', 'C', 'D'],
 
 
 # visits all the nodes of a graph (connected component) using BFS
-def bfs_connected_component(graph, start):
+def bfs(graph, start):
     # keep track of all visited nodes
     explored = []
     # keep track of nodes to be checked
@@ -44,4 +44,4 @@ def bfs_connected_component(graph, start):
     return explored
 
 
-ans = bfs_connected_component(graph, 'A')
+ans = bfs(graph, 'A')
