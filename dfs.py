@@ -9,6 +9,9 @@ graph = {'A': ['B', 'C', 'D'],
 
 
 def dfs(graph, start):
+    levels = {}
+    levels[start] = 0
+
     path = []
     stack = [start]
     while stack != []:
@@ -17,7 +20,10 @@ def dfs(graph, start):
             path.append(v)
         for w in reversed(graph[v]):
             if w not in path:
+                levels[w] = levels[v]+1
                 stack.append(w)
+
+    print(levels)
     return path
 
 
