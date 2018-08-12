@@ -27,7 +27,7 @@ def bfs(graph, start, goal):
                 queue.append(neighbour)
                 visited.append(neighbour)
 
-                levels[neighbour] = levels[node]+1
+                levels[neighbour] = levels[node] + 1
 
     print("LEVELS:- ")
     print(levels)
@@ -49,7 +49,7 @@ def dfs(graph, start, goal):
             break
         for w in reversed(graph[v]):
             if w not in path:
-                levels[w] = levels[v]+1
+                levels[w] = levels[v] + 1
                 stack.append(w)
     print("LEVELS:- ")
     print(levels)
