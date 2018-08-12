@@ -32,9 +32,9 @@ def bfs(graph, start, goal):
                 queue.append(neighbour)
                 visited.append(neighbour)
 
-                levels[neighbour] = levels[node]+1
+                levels[neighbour] = levels[node] + 1
                 if neighbour is goal:
-                    print("Goal Found "+neighbour)
+                    print("Goal Found " + neighbour)
                     break
 
     print(levels)
